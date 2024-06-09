@@ -47,7 +47,7 @@ body {
 
 .navigation-container {
   width: 100%;
-  height: 5rem;
+  height: 6rem;
   max-width: 100%;
   display: flex;
   align-items: flex-end;
@@ -55,40 +55,71 @@ body {
   border-bottom: 3px solid #e4e4e4;
 }
 
-.nav-underline {
-  display: flex;
-  padding-left: 3.5rem;
-  margin: 0;
-  list-style: none;
-  width: 100%;
-}
+/* Remove this container when use*/
 
-.nav-item {
-  margin: 0 1rem;
-  padding-bottom: 5px;
+.tab-container {
   position: relative;
 
-  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  padding: 2px;
 }
 
-.custom-nav-link {
+.indicator {
+  content: "";
+  width: 160px;
+  height: 3px;
+  background: #479bd8;
+  position: absolute;
+  bottom: -3px;
+  height: 3px;
+  left: 0px;
+  z-index: 9;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 7px;
+  transition: all 0.2s ease-out;
+}
+
+.tab {
+  width: 160px;
+  height: 28px;
+  position: absolute;
+  z-index: 99;
+  outline: none;
+  opacity: 0;
+}
+
+.tab_label {
+  width: 160px;
+  height: 28px;
+
+  position: relative;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  cursor: pointer;
+
   color: #10100e;
   font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
 }
 
-.custom-active {
-  color: #479bd8;
+.tab--1:checked ~ .indicator {
+  left: 2px;
 }
 
-.custom-active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  height: 3px;
-  width: 100%;
-  background-color: #479bd8;
-  border-radius: 100px;
+.tab--2:checked ~ .indicator {
+  left: calc(160px + 2px);
+}
+
+.tab--3:checked ~ .indicator {
+  left: calc(160px * 2 + 2px);
 }

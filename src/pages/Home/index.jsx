@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { act, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../routes/app.routes";
 
 import { IoIosNotifications } from "react-icons/io";
@@ -14,9 +14,11 @@ import { BtnMenu } from "../../components/btnMenu";
 
 export function Home() {
   const [activeLink, setActiveLink] = useState("Explore");
+  const navigate = useNavigate();
 
-  const handleSetActive = (link) => {
+  const handleSetActive = (link, path) => {
     setActiveLink(link);
+    navigate(path);
   };
 
   return (
@@ -41,41 +43,57 @@ export function Home() {
       </div>
 
       <div className="navigation-container">
-        <ul className="nav nav-underline">
-          <li className="nav-item">
-            <Link
-              to="/"
-              className={`custom-nav-link ${
-                activeLink === "Explore" ? "custom-active" : ""
-              }`}
-              onClick={() => handleSetActive("Explore")}
-            >
-              Explore
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/make-questions"
-              className={`custom-nav-link ${
-                activeLink === "Make questions" ? "custom-active" : ""
-              }`}
-              onClick={() => handleSetActive("Make questions")}
-            >
-              Make questions
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/settings"
-              className={`custom-nav-link ${
-                activeLink === "Settings" ? "custom-active" : ""
-              }`}
-              onClick={() => handleSetActive("Settings")}
-            >
-              Settings
-            </Link>
-          </li>
-        </ul>
+        <div class="tab-container">
+          <input
+            type="radio"
+            name="tab"
+            id="tab1"
+            class="tab tab--1"
+            checked={activeLink === "Explore"}
+            readOnly
+          />
+          <label
+            class="tab_label"
+            for="tab1"
+            onClick={() => handleSetActive("Explore", "/")}
+          >
+            Explore
+          </label>
+
+          <input
+            type="radio"
+            name="tab"
+            id="tab2"
+            class="tab tab--2"
+            checked={activeLink === "Make questions"}
+            readOnly
+          />
+          <label
+            class="tab_label"
+            for="tab2"
+            onClick={() => handleSetActive("Make questions", "/make-questions")}
+          >
+            Make questions
+          </label>
+
+          <input
+            type="radio"
+            name="tab"
+            id="tab3"
+            class="tab tab--3"
+            checked={activeLink === "Settings"}
+            readOnly
+          />
+          <label
+            class="tab_label"
+            for="tab3"
+            onClick={() => handleSetActive("Settings", "/settings")}
+          >
+            Settings
+          </label>
+
+          <div class="indicator"></div>
+        </div>
       </div>
 
       <AppRoutes />

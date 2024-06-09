@@ -41,8 +41,8 @@ export function Post() {
                     </div>
                     <div className="small text-body text-opacity-50">
                       <img
-                        src="https://i.pinimg.com/originals/91/06/fd/9106fde88b0fdf39d4793fa145299da9.jpg"
-                        width="25"
+                        src="https://avatars.githubusercontent.com/u/99421761?s=400&u=dd76f7f8c19436a56e670ddc9e9bd3eb7410cc0d&v=4"
+                        width="30"
                         alt=""
                         className="img-approved-profile me-1"
                       />

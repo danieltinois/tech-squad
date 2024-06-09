@@ -11,7 +11,11 @@ export function Explore() {
           <InputQuestion title="Post an article to help our community members" />
         </div>
 
-        <div className="post-container mt-4">
+        <div className="post-container">
+          <Post />
+        </div>
+
+        <div className="post-container">
           <Post />
         </div>
       </div>

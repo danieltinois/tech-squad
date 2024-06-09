@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+.profile {
+  padding: 0;
+}
+
 .card-custom {
   border: none;
   border-radius: 8px;

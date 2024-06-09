@@ -1,0 +1,7 @@
+.custom-post-container {
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+}

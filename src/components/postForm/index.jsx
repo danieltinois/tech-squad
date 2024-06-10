@@ -19,7 +19,7 @@ export function PostForm() {
 
   return (
     <div className="container">
-      <h1 className="mb-4">Publicar Novo Conteúdo</h1>
+      <h1 className="my-4">Faça uma pergunta! 👋</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">Título *</label>

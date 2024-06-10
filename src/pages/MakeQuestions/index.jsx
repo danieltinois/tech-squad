@@ -7,8 +7,6 @@ export function MakeQuestions() {
   }, []);
   return (
     <div>
-      <span>MakeQuestions</span>
-
       <PostForm />
     </div>
   );

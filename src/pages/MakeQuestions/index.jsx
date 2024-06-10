@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { PostForm } from "../../components/postForm";
 
 export function MakeQuestions() {
   useEffect(() => {
@@ -7,6 +8,8 @@ export function MakeQuestions() {
   return (
     <div>
       <span>MakeQuestions</span>
+
+      <PostForm />
     </div>
   );
 }

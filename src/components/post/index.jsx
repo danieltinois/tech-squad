@@ -97,9 +97,9 @@ export function Post() {
                       onMouseEnter={() => setIsHoveredButton("like")}
                       onMouseLeave={() => setIsHoveredButton(null)}
                     >
-                      <label class="container-heart">
+                      <label className="container-heart">
                         <input type="checkbox" onChange={handleLikeClick} />
-                        <div class="checkmark">
+                        <div className="checkmark">
                           <LikeIcon
                             className="icon"
                             isHovered={isHoveredButton === "like"}
@@ -122,7 +122,7 @@ export function Post() {
                       onMouseEnter={() => setIsHoveredButton("save")}
                       onMouseLeave={() => setIsHoveredButton(null)}
                     >
-                      <label for="checkboxInput" class="bookmark">
+                      <label for="checkboxInput" className="bookmark">
                         <input type="checkbox" id="checkboxInput" />
                         <SaveIcon
                           className="svgIcon"

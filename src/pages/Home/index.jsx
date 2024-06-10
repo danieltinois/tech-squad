@@ -43,17 +43,17 @@ export function Home() {
       </div>
 
       <div className="navigation-container">
-        <div class="tab-container">
+        <div className="tab-container">
           <input
             type="radio"
             name="tab"
             id="tab1"
-            class="tab tab--1"
+            className="tab tab--1"
             checked={activeLink === "Explore"}
             readOnly
           />
           <label
-            class="tab_label"
+            className="tab_label"
             for="tab1"
             onClick={() => handleSetActive("Explore", "/")}
           >
@@ -64,12 +64,12 @@ export function Home() {
             type="radio"
             name="tab"
             id="tab2"
-            class="tab tab--2"
+            className="tab tab--2"
             checked={activeLink === "Make questions"}
             readOnly
           />
           <label
-            class="tab_label"
+            className="tab_label"
             for="tab2"
             onClick={() => handleSetActive("Make questions", "/make-questions")}
           >
@@ -80,19 +80,19 @@ export function Home() {
             type="radio"
             name="tab"
             id="tab3"
-            class="tab tab--3"
+            className="tab tab--3"
             checked={activeLink === "Settings"}
             readOnly
           />
           <label
-            class="tab_label"
+            className="tab_label"
             for="tab3"
             onClick={() => handleSetActive("Settings", "/settings")}
           >
             Settings
           </label>
 
-          <div class="indicator"></div>
+          <div className="indicator"></div>
         </div>
       </div>
 

@@ -1,0 +1,30 @@
+.input-title {
+  border: 1px solid #0000002d;
+  border-radius: 0;
+}
+
+.btn-group {
+  gap: 10px;
+}
+
+.btn-publisher {
+  border: 1px solid #3f8be4;
+  border-radius: 8px;
+  background: #3f8be4;
+  color: #ffff;
+  padding: 10px;
+}
+
+.btn-cancel-custom {
+  border: transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #10100e;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.btn-cancel-custom:hover {
+  border-radius: 8px;
+  color: #ff5353;
+}

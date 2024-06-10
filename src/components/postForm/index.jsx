@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import "./styles.css";
+import { TextEditor } from "../textEditor";
 
 export function PostForm() {
   const [title, setTitle] = useState("");
@@ -19,7 +18,9 @@ export function PostForm() {
 
   return (
     <div className="container">
-      <h1 className="my-4">Faça uma pergunta! 👋</h1>
+      <h1 className="my-4">
+        Faça uma pergunta! <span className="wave">👋</span>
+      </h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">Título *</label>
@@ -34,33 +35,8 @@ export function PostForm() {
         </div>
         <div className="form-group my-4">
           <label htmlFor="content">Corpo da publicação *</label>
-          <CKEditor
-            editor={ClassicEditor}
-            data={content}
-            onChange={(event, editor) => {
-              const data = editor.getData();
-              setContent(data);
-            }}
-            config={{
-              toolbar: {
-                items: [
-                  "heading",
-                  "|",
-                  "bold",
-                  "italic",
-                  "link",
-                  "|",
-                  "bulletedList",
-                  "numberedList",
-                  "|",
-                  "undo",
-                  "redo",
-                ],
-              },
-            }}
-            className="ck-editor-rounded"
-            style={{ height: "500px" }}
-          />
+
+          <TextEditor />
         </div>
 
         <div className="my-4 btn-group">

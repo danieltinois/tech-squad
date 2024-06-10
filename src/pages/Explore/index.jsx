@@ -2,8 +2,13 @@ import "./styles.css";
 
 import { InputQuestion } from "../../components/inputQuestion";
 import { Post } from "../../components/post";
+import { useEffect } from "react";
 
 export function Explore() {
+  useEffect(() => {
+    document.title = "Explore - Tech Squad";
+  }, []);
+
   return (
     <div className="div-container">
       <div className="content">

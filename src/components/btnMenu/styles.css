@@ -35,8 +35,7 @@
 }
 
 .dropdown-options {
-  display: none;
-
+  display: block;
   position: absolute;
   top: 100%;
   left: 0;
@@ -46,15 +45,15 @@
   border-top: none;
   border-radius: 0 0 30px 30px;
   z-index: 1;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  padding-bottom: 10px;
 }
 
 .dropdown-container.open .dropdown-options {
-  display: block;
-  max-height: 500px;
+  max-height: 500px; /* Ajuste conforme necessário */
+  opacity: 1;
 }
 
 .dropdown-options .option {
@@ -64,7 +63,6 @@
   cursor: pointer;
   transition: background-color 0.3s;
   gap: 10px;
-
   border: none;
   background: none;
 }

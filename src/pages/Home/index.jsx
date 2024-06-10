@@ -1,4 +1,4 @@
-import { act, useState } from "react";
+import { act, useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../routes/app.routes";
 
@@ -13,14 +13,35 @@ import { Input } from "../../components/input";
 import { BtnMenu } from "../../components/btnMenu";
 
 export function Home() {
-  const [activeLink, setActiveLink] = useState("Explore");
+  const [activeLink, setActiveLink] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedActiveLink = localStorage.getItem("activeLink");
+    if (storedActiveLink) {
+      setActiveLink(storedActiveLink);
+      navigate(getPath(storedActiveLink));
+    }
+  }, []);
 
   const handleSetActive = (link, path) => {
     setActiveLink(link);
-    navigate(path);
+    localStorage.setItem("activeLink", link);
+    navigate(getPath(link));
   };
 
+  const getPath = (link) => {
+    switch (link) {
+      case "Explore":
+        return "/";
+      case "Make questions":
+        return "/make-questions";
+      case "Settings":
+        return "/settings";
+      default:
+        return "/";
+    }
+  };
   return (
     <div>
       <div className="navbar-container">

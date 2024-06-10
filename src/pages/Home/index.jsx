@@ -34,8 +34,8 @@ export function Home() {
         </div>
 
         <div className="navbar-item navbar-right btn-container">
-          <button className="btn-notication">
-            <IoIosNotifications size={30} />
+          <button className="btn-notification">
+            <IoIosNotifications size={30} className="bell" />
           </button>
 
           <BtnMenu user={"Admin"} icon={IoIosArrowDown} />

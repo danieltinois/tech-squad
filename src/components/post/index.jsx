@@ -53,6 +53,7 @@ export function Post() {
                     </div>
                   </div>
                 </div>
+                <h4>Post title</h4>
                 <div className="truncated-text">
                   <p>
                     {truncatedContentPost}
@@ -87,11 +88,16 @@ export function Post() {
                       onMouseEnter={() => setIsHoveredButton("like")}
                       onMouseLeave={() => setIsHoveredButton(null)}
                     >
-                      <LikeIcon
-                        className="icon"
-                        isHovered={isHoveredButton === "like"}
-                      />
-                      Like
+                      <label class="container-heart">
+                        <input type="checkbox" />
+                        <div class="checkmark">
+                          <LikeIcon
+                            className="icon"
+                            isHovered={isHoveredButton === "like"}
+                          />
+                        </div>
+                        Like
+                      </label>
                     </button>
                     <button
                       onMouseEnter={() => setIsHoveredButton("comment")}

@@ -78,3 +78,69 @@
   color: #3f8be4;
   margin-left: 5px;
 }
+
+/* heart */
+
+.container-heart input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container-heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: 100ms;
+  gap: 5px;
+}
+
+.checkmark {
+  top: 0;
+  left: 0;
+
+  transition: 100ms;
+  animation: dislike_effect 400ms ease;
+}
+
+.container-heart input:checked ~ .checkmark path {
+  fill: #ff5353;
+  stroke-width: 0;
+}
+
+.container-heart input:checked ~ .checkmark {
+  animation: like_effect 400ms ease;
+}
+
+@keyframes like_effect {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes dislike_effect {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

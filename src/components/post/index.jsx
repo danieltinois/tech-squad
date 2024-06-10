@@ -10,6 +10,15 @@ import { LikeIcon } from "../icons/favorite";
 export function Post() {
   const [isHoveredButton, setIsHoveredButton] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [likes, setLikes] = useState(180);
+
+  const handleLikeClick = (e) => {
+    if (e.target.checked) {
+      setLikes((prevLikes) => prevLikes + 1);
+    } else {
+      setLikes((prevLikes) => prevLikes - 1);
+    }
+  };
 
   const contentPost =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat incidunt earum facilis maiores illo nobis possimus dolorum qui dolore esse consequatur porro explicabo autem sapiente in dolorem, error repudiandae minus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eos provident deserunt pariatur debitis soluta aperiam, ut voluptates aliquid iusto laudantium hic, porro vitae veniam repellat consectetur, odit quae! Nam!";
@@ -34,7 +43,7 @@ export function Post() {
                     />
                   </a>
                   <div className="flex-fill ps-2">
-                    <div className="fw-bold">
+                    <div className="fw-bold mb-1">
                       <a href="#" className="text-decoration-none text-dark">
                         User1
                       </a>
@@ -77,7 +86,7 @@ export function Post() {
                 </div>
 
                 <div className="my-3 text-body text-opacity-50">
-                  <span>182 likes</span>
+                  <span>{likes} likes</span>
                   <span className="separation-point">.</span>
                   <span>21 comments</span>
                 </div>
@@ -89,7 +98,7 @@ export function Post() {
                       onMouseLeave={() => setIsHoveredButton(null)}
                     >
                       <label class="container-heart">
-                        <input type="checkbox" />
+                        <input type="checkbox" onChange={handleLikeClick} />
                         <div class="checkmark">
                           <LikeIcon
                             className="icon"
@@ -113,11 +122,14 @@ export function Post() {
                       onMouseEnter={() => setIsHoveredButton("save")}
                       onMouseLeave={() => setIsHoveredButton(null)}
                     >
-                      <SaveIcon
-                        className="icon"
-                        isHovered={isHoveredButton === "save"}
-                      />
-                      Save
+                      <label for="checkboxInput" class="bookmark">
+                        <input type="checkbox" id="checkboxInput" />
+                        <SaveIcon
+                          className="svgIcon"
+                          isHovered={isHoveredButton === "save"}
+                        />
+                        Save
+                      </label>
                     </button>
                     <button
                       onMouseEnter={() => setIsHoveredButton("donate")}

@@ -14,10 +14,6 @@ export function Explore() {
         <div className="post-container">
           <Post />
         </div>
-
-        <div className="post-container">
-          <Post />
-        </div>
       </div>
     </div>
   );

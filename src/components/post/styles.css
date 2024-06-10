@@ -144,3 +144,41 @@
     transform: scale(1);
   }
 }
+
+/* BOOKMARK */
+
+#checkboxInput {
+  display: none;
+}
+.bookmark {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 5px;
+}
+.svgIcon path {
+  stroke-dasharray: 200 0;
+  stroke-dashoffset: 0;
+  /* stroke: #10100e; */
+  fill: #dddddd00;
+  transition-delay: 0s;
+}
+
+#checkboxInput:checked ~ .svgIcon path {
+  stroke: gold;
+  fill: gold;
+  animation: bookmark 0.5s linear;
+  transition-delay: 0.5s;
+}
+
+@keyframes bookmark {
+  0% {
+    stroke-dasharray: 0 200;
+    stroke-dashoffset: 80;
+  }
+  100% {
+    stroke-dasharray: 200 0;
+  }
+}

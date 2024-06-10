@@ -4,8 +4,9 @@
   padding: 5px 15px 5px 10px;
   border: 1px solid #e4e4e4;
   background-color: #f2f2f2;
-  border-radius: 50px;
+  border-radius: 30px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-menu img {
@@ -19,4 +20,67 @@
 .btn-menu .user-name {
   margin-right: 5px;
   font-size: 16px;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+}
+
+.dropdown-container.open .btn-menu {
+  border-radius: 30px 30px 0 0;
+  border-bottom: none;
+}
+
+.dropdown-options {
+  display: none;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f2f2f2;
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-top: none;
+  border-radius: 0 0 30px 30px;
+  z-index: 1;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.dropdown-container.open .dropdown-options {
+  display: block;
+  max-height: 500px;
+}
+
+.dropdown-options .option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  gap: 10px;
+
+  border: none;
+  background: none;
+}
+
+.dropdown-options .option:hover {
+  background-color: #f0f0f0;
+  color: #3f8be4;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s;
+}
+
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.option-icon {
 }

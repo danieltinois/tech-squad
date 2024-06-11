@@ -3,10 +3,13 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 
 export function PostForm() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,6 +52,10 @@ export function PostForm() {
     setBody(value);
   };
 
+  const handleBackExplore = () => {
+    navigate("/");
+  };
+
   return (
     <div>
       <div>
@@ -85,7 +92,11 @@ export function PostForm() {
           <button type="submit" className="btn-publisher">
             Publicar
           </button>
-          <button type="reset" className="btn-cancel-custom">
+          <button
+            type="reset"
+            className="btn-cancel-custom"
+            onClick={handleBackExplore}
+          >
             Cancelar
           </button>
         </div>

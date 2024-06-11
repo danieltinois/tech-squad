@@ -42,6 +42,7 @@ export function Home() {
         return "/";
     }
   };
+
   return (
     <div>
       <div className="navbar-container">

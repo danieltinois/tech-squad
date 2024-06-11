@@ -1,0 +1,41 @@
+.alert-info {
+  display: flex;
+  align-items: center;
+  /* margin: 0px 2rem; */
+
+  svg {
+    position: relative;
+    top: -2.1px;
+  }
+}
+
+.bg-blue-subtle {
+  background-color: rgba(71, 155, 216, 0.1); /* cor azul com 10% de opacidade */
+}
+
+.info-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}
+
+/* Animação da informação para primeira publicação */
+
+.slide-down-fade-in {
+  animation: slideDownFadeIn 1s ease forwards;
+}
+
+@keyframes slideDownFadeIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

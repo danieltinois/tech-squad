@@ -182,3 +182,10 @@
     stroke-dasharray: 200 0;
   }
 }
+
+.post-container pre {
+  background-color: #333; /* Cor de fundo escura */
+  border-radius: 8px; /* Raio da borda */
+  padding: 10px; /* Espaçamento interno */
+  color: #fff; /* Cor do texto */
+}

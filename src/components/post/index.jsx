@@ -10,7 +10,7 @@ import { LikeIcon } from "../icons/favorite";
 export function Post() {
   const [isHoveredButton, setIsHoveredButton] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [likes, setLikes] = useState(180);
+  const [likes, setLikes] = useState(500);
 
   const handleLikeClick = (e) => {
     if (e.target.checked) {
@@ -20,12 +20,19 @@ export function Post() {
     }
   };
 
-  const contentPost =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat incidunt earum facilis maiores illo nobis possimus dolorum qui dolore esse consequatur porro explicabo autem sapiente in dolorem, error repudiandae minus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eos provident deserunt pariatur debitis soluta aperiam, ut voluptates aliquid iusto laudantium hic, porro vitae veniam repellat consectetur, odit quae! Nam!";
+  const contentPost = `
+    <p><strong>Introdução:</strong></p><ul><li>Breve visão geral da importância das peças de computador na construção de sistemas funcionais.</li><li>Importância da compatibilidade e integração entre componentes.</li></ul><p><strong>Processador (CPU):</strong></p><ul><li>Função como o cérebro do computador.</li><li>Explicação sobre arquiteturas, como x86, x64, ARM, etc.</li><li>Discussão sobre núcleos, threads, velocidades de clock e cache.</li></ul><p><strong>Placa-mãe:</strong></p><ul><li>Descrição da placa-mãe como o "esqueleto" do computador.</li><li>Explicação dos slots de expansão, como PCI, PCIe, RAM slots, etc.</li><li>Discussão sobre chipset, BIOS/UEFI e conectores.</li></ul><p><strong>Memória RAM:</strong></p><ul><li>Importância da RAM na velocidade e desempenho do sistema.</li><li>Explicação sobre tipos de RAM, como DDR3, DDR4, capacidades e frequências.</li><li>Discussão sobre dual-channel, quad-channel e ECC.</li></ul><p><strong>Placa de vídeo (GPU):</strong></p><ul><li>Papel da GPU no processamento gráfico.</li><li>Explicação sobre GPUs integradas e dedicadas.</li><li>Discussão sobre arquiteturas (NVIDIA, AMD), VRAM e resoluções suportadas.</li></ul><p><strong>Armazenamento:</strong></p><ul><li>Tipos de armazenamento: HDDs, SSDs, NVMe.</li><li>Explicação sobre capacidades, velocidades de leitura/gravação e durabilidade.</li><li>Discussão sobre interfaces, como SATA, PCIe, M.2.</li></ul><p><strong>Fonte de alimentação:</strong></p><ul><li>Importância da PSU na distribuição de energia.</li><li>Explicação sobre certificações de eficiência, capacidades e conectores.</li><li>Discussão sobre energia modular vs não-modular.</li></ul><p><strong>Refrigeração:</strong></p><ul><li>Significado da refrigeração eficaz para a estabilidade e vida útil do sistema.</li><li>Explicação sobre diferentes métodos de resfriamento: ar, líquido.</li><li>Discussão sobre ventoinhas, dissipadores de calor e sistemas de refrigeração líquida.</li></ul><p><strong>Gabinete:</strong></p><ul><li>Importância do gabinete na organização e proteção dos componentes.</li><li>Explicação sobre fatores de forma, tamanhos e características de design.</li><li>Discussão sobre ventilação, gerenciamento de cabos e personalização estética.</li></ul><p><strong>Periféricos:</strong></p><ul><li>Breve visão geral sobre dispositivos de entrada e saída.</li><li>Explicação sobre teclados, ratos, monitores, impressoras, etc.</li><li>Discussão sobre conectividade, drivers e compatibilidade.</li></ul><p><strong>Montagem e Manutenção:</strong></p><ul><li>Passos básicos para montagem de um computador.</li><li>Importância da manutenção preventiva e diagnóstico de problemas.</li><li>Discussão sobre atualizações de hardware e software.</li></ul><p><strong>Considerações Finais:</strong></p><ul><li>Recapitulação da importância de entender as peças de computador para construir sistemas eficientes.</li><li>Encorajamento à pesquisa adicional e prática na construção e manutenção de computadores.</li></ul><pre class="ql-syntax" spellcheck="false">  const handleSubmit = (event) =&gt; {
+    event.preventDefault();
+    // Aqui você pode enviar os dados para o backend.
+    console.log("Title:", title);
+    console.log("Body:", body);
+  };
+</pre>
+  `;
 
   const truncatedContentPost = isExpanded
     ? contentPost
-    : contentPost.slice(0, 150);
+    : contentPost.slice(0, 500);
 
   return (
     <div className="custom-post-container">
@@ -64,26 +71,26 @@ export function Post() {
                 </div>
                 <h4>Post title</h4>
                 <div className="truncated-text">
-                  <p>
-                    {truncatedContentPost}
-                    {!isExpanded && (
-                      <button
-                        className="btn-custom-isExpanded"
-                        onClick={() => setIsExpanded(true)}
-                      >
-                        ...view more
-                      </button>
-                    )}
-                  </p>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: truncatedContentPost }}
+                  />
+                  {!isExpanded && (
+                    <button
+                      className="btn-custom-isExpanded"
+                      onClick={() => setIsExpanded(true)}
+                    >
+                      ...view more
+                    </button>
+                  )}
                 </div>
 
-                <div className="full-img-container">
+                {/* <div className="full-img-container">
                   <img
                     src="https://s.zst.com.br/cms-assets/2020/11/soquete.jpg"
                     alt=""
                     className="full-img"
                   />
-                </div>
+                </div> */}
 
                 <div className="my-3 text-body text-opacity-50">
                   <span>{likes} likes</span>

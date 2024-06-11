@@ -81,3 +81,19 @@
     transform: rotate(0deg);
   }
 }
+
+/* React quill */
+
+.quill {
+  height: 100%;
+}
+
+.react-quill {
+  background: #ffff;
+}
+
+.ql-editor {
+  min-height: 200px;
+
+  font-family: "Poppins", sans-serif;
+}

@@ -3,6 +3,7 @@ import "./styles.css";
 import { DarkLightIcon } from "../iconsMenu/darkLightIcon";
 import { LanguageIcon } from "../iconsMenu/languageIcon";
 import { LogOutIcon } from "../iconsMenu/logOutIcon";
+import { SettingsIcon } from "../iconsMenu/settingsIcon";
 
 export function BtnMenu({ icon: Icon, user, ...rest }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,30 +46,40 @@ export function BtnMenu({ icon: Icon, user, ...rest }) {
         )}
       </button>
       <div className="dropdown-options">
-        <button
-          className="option"
-          onMouseEnter={() => setIsHoveredButton("dark/light")}
-          onMouseLeave={() => setIsHoveredButton(null)}
-        >
-          <DarkLightIcon isHovered={isHoveredButton === "dark/light"} />
-          dark/light
-        </button>
-        <button
-          className="option"
-          onMouseEnter={() => setIsHoveredButton("language")}
-          onMouseLeave={() => setIsHoveredButton(null)}
-        >
-          <LanguageIcon isHovered={isHoveredButton === "language"} />
-          english
-        </button>
-        <button
-          className="option"
-          onMouseEnter={() => setIsHoveredButton("logOut")}
-          onMouseLeave={() => setIsHoveredButton(null)}
-        >
-          <LogOutIcon isHovered={isHoveredButton === "logOut"} />
-          log out
-        </button>
+        <div className="dropdown-buttons">
+          <button
+            className="option"
+            onMouseEnter={() => setIsHoveredButton("settings")}
+            onMouseLeave={() => setIsHoveredButton(null)}
+          >
+            <SettingsIcon isHovered={isHoveredButton === "settings"} />
+            settings
+          </button>
+          <button
+            className="option"
+            onMouseEnter={() => setIsHoveredButton("dark/light")}
+            onMouseLeave={() => setIsHoveredButton(null)}
+          >
+            <DarkLightIcon isHovered={isHoveredButton === "dark/light"} />
+            dark/light
+          </button>
+          <button
+            className="option"
+            onMouseEnter={() => setIsHoveredButton("language")}
+            onMouseLeave={() => setIsHoveredButton(null)}
+          >
+            <LanguageIcon isHovered={isHoveredButton === "language"} />
+            english
+          </button>
+          <button
+            className="option"
+            onMouseEnter={() => setIsHoveredButton("logOut")}
+            onMouseLeave={() => setIsHoveredButton(null)}
+          >
+            <LogOutIcon isHovered={isHoveredButton === "logOut"} />
+            log out
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -70,6 +70,13 @@
   font-size: 15px;
 }
 
+.option:nth-child(4n) {
+  color: #ff5353;
+}
+.dropdown-options .option:nth-child(4n):hover {
+  color: #db5151;
+}
+
 .dropdown-options .option:hover {
   background-color: #f0f0f0;
   color: #3f8be4;

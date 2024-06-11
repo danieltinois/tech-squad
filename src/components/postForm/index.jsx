@@ -93,7 +93,9 @@ export function PostForm() {
             Publicar
           </button>
           <button type="reset" className="btn-cancel-custom">
-            <a href="/make-questions">Cancelar</a>
+            <a className="btn-cancel-custom" href="/make-questions">
+              Cancelar
+            </a>
           </button>
         </div>
         <p className="mt-3">

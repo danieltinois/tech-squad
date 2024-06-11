@@ -4,7 +4,7 @@ export function LogOutIcon({ isHovered, ...rest }) {
       width="30"
       height="30"
       viewBox="0 0 30 30"
-      fill={isHovered ? "#3f8be4" : "black"}
+      fill={isHovered ? "#db5151" : "#ff5353"}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_49_17)">

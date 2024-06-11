@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Explore } from "../pages/Explore";
 import { MakeQuestions } from "../pages/MakeQuestions";
 import { Settings } from "../pages/Settings";
+import { Information } from "../pages/Information";
 
 export function AppRoutes() {
   return (
@@ -10,6 +11,7 @@ export function AppRoutes() {
       <Route path="/" element={<Explore />} />
       <Route path="/make-questions" element={<MakeQuestions />} />
       <Route path="/settings" element={<Settings />} />
+      <Route path="/info" element={<Information />} />
     </Routes>
   );
 }

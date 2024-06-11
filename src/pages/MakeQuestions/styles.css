@@ -3,17 +3,27 @@
   align-items: center;
   /* margin: 0px 2rem; */
 
+  padding: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  margin-top: 0px;
+  /* color: #e6edf3; */
+  background-color: rgba(187, 128, 9, 0.15);
+  border-color: rgba(187, 128, 9, 0.4);
+
+  font-weight: 500;
+
   svg {
     position: relative;
     top: -2.1px;
+    stroke-width: 1;
   }
 }
 
-.bg-blue-subtle {
-  background-color: rgba(71, 155, 216, 0.1); /* cor azul com 10% de opacidade */
-}
-
 .info-link {
+  background: none;
+  border: none;
   cursor: pointer;
   text-decoration: none;
 }

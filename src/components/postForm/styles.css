@@ -38,7 +38,16 @@
   background: transparent;
   color: #10100e;
   padding: 10px;
-  transition: all 0.3s;
+
+  a {
+    text-decoration: none;
+    color: #10100e;
+    transition: all 0.3s;
+  }
+
+  a:hover {
+    color: #ff5353;
+  }
 }
 
 .btn-cancel-custom:hover {

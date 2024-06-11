@@ -14,6 +14,8 @@ body {
   flex: 1;
   display: flex;
   align-items: center;
+
+  cursor: pointer;
 }
 
 .navbar-center {
@@ -161,8 +163,4 @@ body {
 
 .tab--2:checked ~ .indicator {
   left: calc(160px + 2px);
-}
-
-.tab--3:checked ~ .indicator {
-  left: calc(160px * 2 + 2px);
 }

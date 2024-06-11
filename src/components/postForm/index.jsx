@@ -92,12 +92,8 @@ export function PostForm() {
           <button type="submit" className="btn-publisher">
             Publicar
           </button>
-          <button
-            type="reset"
-            className="btn-cancel-custom"
-            onClick={handleBackExplore}
-          >
-            Cancelar
+          <button type="reset" className="btn-cancel-custom">
+            <a href="/make-questions">Cancelar</a>
           </button>
         </div>
         <p className="mt-3">

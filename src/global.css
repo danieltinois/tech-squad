@@ -8,6 +8,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-body textarea button input {
+body,
+textarea,
+button,
+input,
+a {
   font-family: "Poppins", sans-serif;
 }
